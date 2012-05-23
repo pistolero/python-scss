@@ -41,13 +41,11 @@ class CompileError(Exception): pass
 def compile_string(bytes s, include_paths=None, int output_style=SASS_STYLE_NESTED):
     """Compiles SASS string to CSS"""
 
+    include_paths = include_paths or ''
     cdef sass_context* ctx = sass_new_context()
     try:
         ctx.input_string = s
-        if include_paths:
-            ctx.options.include_paths = include_paths
-        else:
-            ctx.options.include_paths = NULL
+        ctx.options.include_paths = include_paths
         ctx.options.output_style = output_style
         sass_compile(ctx)
         if ctx.error_status:
@@ -60,13 +58,11 @@ def compile_string(bytes s, include_paths=None, int output_style=SASS_STYLE_NEST
 def compile_file(bytes path, include_paths=None, int output_style=SASS_STYLE_NESTED):
     """Compiles SASS file to CSS string"""
 
+    include_paths = include_paths or ''
     cdef sass_file_context* ctx = sass_new_file_context()
     try:
         ctx.input_path = path
-        if include_paths:
-            ctx.options.include_paths = include_paths
-        else:
-            ctx.options.include_paths = NULL
+        ctx.options.include_paths = include_paths
         ctx.options.output_style = output_style
         sass_compile_file(ctx)
         if ctx.error_status:
