@@ -12,3 +12,8 @@ ext: sass.pyx setup.py
 
 test: libsass ext
 	LDFLAGS=$(LDFLAGS) python setup.py nosetests
+
+clean:
+	$(MAKE) -C libsass clean
+	python setup.py clean
+
