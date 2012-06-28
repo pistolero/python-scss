@@ -12,7 +12,7 @@ cdef extern from "libsass/sass_interface.h":
 
 
     cdef struct sass_context:
-        char* input_string
+        char* source_string
         char* output_string
         sass_options options
         int error_status
@@ -44,7 +44,7 @@ def compile_string(bytes s, include_paths=None, int output_style=SASS_STYLE_NEST
     include_paths = include_paths or ''
     cdef sass_context* ctx = sass_new_context()
     try:
-        ctx.input_string = s
+        ctx.source_string = s
         ctx.options.include_paths = include_paths
         ctx.options.output_style = output_style
         sass_compile(ctx)
