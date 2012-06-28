@@ -22,5 +22,5 @@ setup(
   license="Apache License 2.0",   
   keywords="sass scss libsass",  
   description='Python bindings for libsass',
-  long_description=open(os.path.join(here, 'README.rst')).read().decode('utf-8')    
+  long_description=open(os.path.join(here, 'README.rst'), 'rb').read().decode('utf-8')    
 )
