@@ -1,7 +1,11 @@
 Python binding for libsass
 ==========================
 
-[![Build Status](https://secure.travis-ci.org/pistolero/python-scss.png?branch=master)](http://github.com/pistolero/python-scss/)
+|BuildStatus|
+
+.. |BuildStatus| image:: https://secure.travis-ci.org/pistolero/python-scss.png?branch=master
+                 :target: http://github.com/pistolero/python-scss/
+                 :alt: Build status
 
 Usage
 -----
