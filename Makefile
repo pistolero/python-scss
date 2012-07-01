@@ -15,5 +15,6 @@ test: libsass ext
 
 clean:
 	$(MAKE) -C libsass clean
+	rm sass.c || true
 	python setup.py clean
 
