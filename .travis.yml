@@ -1,3 +1,4 @@
 before_install:
   - git submodule update --init --recursive
+  - apt-get install cython
 script: "make"
