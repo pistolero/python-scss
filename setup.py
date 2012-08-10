@@ -15,21 +15,34 @@
 
 from distutils.extension import Extension
 from setuptools import setup, Extension
-from Cython.Distutils import build_ext
+
+try:
+    from Cython.Distutils import build_ext
+except ImportError:
+    print "No Cython installed. Building from pregenerated C source."
+    build_ext = None
 
 import os.path
 here = os.path.dirname(os.path.abspath(__file__))
 
+
+
 ext_modules = [Extension("sass", 
-					["sass.pyx"],
-					libraries=["sass", 'stdc++']
-				)]
+               ["sass.pyx"],
+               libraries=["sass", 'stdc++'],
+               library_dirs=['./libsass']
+)]
+
+cmdclass = {}
+if build_ext:
+    cmdclass = {'build_ext': build_ext}
+
 
 setup(
   name = 'sass',
-  cmdclass = {'build_ext': build_ext},
+  cmdclass = cmdclass,
   ext_modules = ext_modules,
-  version = '1.0',
+  version = '1.1',
   author = 'Sergey Kirilov',
   author_email = 'sergey.kirillov@gmail.com',
   url='https://github.com/pistolero/python-scss', 
