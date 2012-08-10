@@ -18,3 +18,5 @@ clean:
 	rm sass.c || true
 	python setup.py clean
 
+upload: all
+	python setup.py sdist upload
