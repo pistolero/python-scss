@@ -56,7 +56,7 @@ class CompileError(Exception): pass
 def compile_string(bytes s, include_paths=None, int output_style=SASS_STYLE_NESTED):
     """Compiles SASS string to CSS"""
 
-    include_paths = include_paths or ''
+    include_paths = include_paths or b''
     cdef sass_context* ctx = sass_new_context()
     try:
         ctx.source_string = s
@@ -73,7 +73,7 @@ def compile_string(bytes s, include_paths=None, int output_style=SASS_STYLE_NEST
 def compile_file(bytes path, include_paths=None, int output_style=SASS_STYLE_NESTED):
     """Compiles SASS file to CSS string"""
 
-    include_paths = include_paths or ''
+    include_paths = include_paths or b''
     cdef sass_file_context* ctx = sass_new_file_context()
     try:
         ctx.input_path = path
@@ -84,4 +84,4 @@ def compile_file(bytes path, include_paths=None, int output_style=SASS_STYLE_NES
             raise CompileError(ctx.error_message or 'Unknown compilation error')
         return ctx.output_string
     finally:
-        sass_free_file_context(ctx)        
+        sass_free_file_context(ctx)
