@@ -19,7 +19,7 @@ from setuptools import setup, Extension
 try:
     from Cython.Distutils import build_ext
 except ImportError:
-    print "No Cython installed. Building from pregenerated C source."
+    print("No Cython installed. Building from pregenerated C source.")
     build_ext = None
 
 import os.path
