@@ -1,0 +1,12 @@
+Python bindings for libsass.
+
+URL:   https://github.com/pistolero/python-scss
+
+Original author and current maintainer:
+Sergey Kirillov <sergey.kirillov@gmail.com>
+
+Contributors:
+
+- Elliott Sales de Andrade <http://qulogic.blogspot.com/>
+- Taha Jahangir <https://github.com/tahajahangir>
+- Will Bond <will@wbond.net>
