@@ -16,6 +16,13 @@ Usage
    >>> sass.compile_string("div { a { color: black}}")
    'div a {\n  color: black; }\n'
 
+
+Compatibility
+-------------
+
+Tested with Python 2.7 and Python 3.2/3.3
+
+
 Development
 -----------
 
