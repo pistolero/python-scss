@@ -18,12 +18,12 @@ from nose.tools import eq_, assert_equal, raises
 
 @raises(sass.CompileError)
 def test1():
-	result = sass.compile_string('asd', '', sass.SASS_STYLE_NESTED)
-	eq_(result, 'asd')
+	result = sass.compile_string(b'asd', '', sass.SASS_STYLE_NESTED)
+	eq_(result, b'asd')
 
 
 def test2():
-	result = sass.compile_string('''table.hl {
+	result = sass.compile_string(b'''table.hl {
   margin: 2em 0;
   td.ln {
     text-align: right;
@@ -38,7 +38,7 @@ li {
   }
 }''', '', sass.SASS_STYLE_NESTED)
 
-	expected = '''table.hl {
+	expected = b'''table.hl {
   margin: 2em 0; }
   table.hl td.ln {
     text-align: right; }
