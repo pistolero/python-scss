@@ -10,7 +10,6 @@ Python binding for libsass
 Usage
 -----
 
-::
 .. code:: python
 
    >>> import sass
@@ -21,7 +20,6 @@ Usage
 Installation
 ------------
 
-::
 .. code:: sh
 
     pip install sass
@@ -38,7 +36,6 @@ Development
 
 Steps to compile and install:
 
-::
 .. code:: sh
 
    sudo pip install Cython
