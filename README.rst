@@ -4,7 +4,7 @@ Python binding for libsass
 |BuildStatus|
 
 .. |BuildStatus| image:: https://secure.travis-ci.org/pistolero/python-scss.png?branch=master
-                 :target: http://github.com/pistolero/python-scss/
+                 :target: https://travis-ci.org/pistolero/python-scss
                  :alt: Build status
 
 Usage
