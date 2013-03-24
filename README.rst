@@ -45,3 +45,10 @@ Steps to compile and install:
    sudo python setup.py install
 
 If you want to use an alternate `python`, you'll have to edit the `Makefile` or execute those commands from activated virtualenv.
+
+
+
+How to contribute
+-----------------
+
+It is easy. Fork repo on GitHub, fix stuff and send me nice looking pull-request.
