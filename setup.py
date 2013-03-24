@@ -25,12 +25,27 @@ except ImportError:
 import os.path
 here = os.path.dirname(os.path.abspath(__file__))
 
-
+libsass_sources = [
+    'libsass/selector.cpp', 
+    'libsass/eval_apply.cpp', 
+    'libsass/node_emitters.cpp', 
+    'libsass/document.cpp', 
+    'libsass/prelexer.cpp', 
+    'libsass/node_factory.cpp', 
+    'libsass/functions.cpp', 
+    'libsass/constants.cpp', 
+    'libsass/node.cpp', 
+    'libsass/context.cpp', 
+    'libsass/document_parser.cpp', 
+    'libsass/sass_interface.cpp'
+]
 
 ext_modules = [Extension("sass", 
-               ["sass.pyx"],
-               libraries=["sass", 'stdc++'],
-               library_dirs=['./libsass']
+               libsass_sources + ["sass.pyx"],
+               libraries=['stdc++'],
+               library_dirs=['./libsass'],
+               include_dirs=['.', 'libsass'],
+               language='c++'
 )]
 
 cmdclass = {}
@@ -42,11 +57,14 @@ setup(
   name = 'sass',
   cmdclass = cmdclass,
   ext_modules = ext_modules,
-  version = '1.3',
+  version = '2.0',
   author = 'Sergey Kirilov',
   author_email = 'sergey.kirillov@gmail.com',
   url='https://github.com/pistolero/python-scss', 
-  install_requires=['Cython'],
+  install_requires=[],
+  extras_require = {
+#    'develop': ['Cython']
+  },
   license="Apache License 2.0",   
   keywords="sass scss libsass",  
   description='Python bindings for libsass',

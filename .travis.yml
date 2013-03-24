@@ -7,10 +7,9 @@ python:
 
 before_install:
   - git submodule update --init --recursive
-  - sudo apt-get update
 
 install:
   - sudo apt-get install cython python-nose python-dev
-  - pip install cython --use-mirrors
 
-script: "make test"
+script: 
+  - ./travis-ci.sh

@@ -17,6 +17,13 @@ Usage
    'div a {\n  color: black; }\n'
 
 
+Installation
+------------
+
+::
+    pip install sass
+
+
 Compatibility
 -------------
 
@@ -36,4 +43,4 @@ Steps to compile and install:
    make
    sudo python setup.py install
 
-If you want to use an alternate `python`, you'll have to edit the `Makefile`.
+If you want to use an alternate `python`, you'll have to edit the `Makefile` or execute those commands from activated virtualenv.
