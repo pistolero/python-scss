@@ -11,6 +11,7 @@ Usage
 -----
 
 ::
+.. code:: python
 
    >>> import sass
    >>> sass.compile_string("div { a { color: black}}")
@@ -21,6 +22,7 @@ Installation
 ------------
 
 ::
+.. code:: sh
 
     pip install sass
 
@@ -37,12 +39,13 @@ Development
 Steps to compile and install:
 
 ::
+.. code:: sh
 
    sudo pip install Cython
    git submodule init
    git submodule update
    make
-   sudo python setup.py install
+   sudo python setup.py develop
 
 If you want to use an alternate `python`, you'll have to edit the `Makefile` or execute those commands from activated virtualenv.
 
