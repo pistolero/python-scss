@@ -9,7 +9,7 @@ before_install:
   - git submodule update --init --recursive
 
 install:
-  - sudo apt-get install cython python-nose python-dev
+  - sudo apt-get install cython python-nose python-dev python-coverage
 
 script: 
   - ./travis-ci.sh

@@ -12,4 +12,5 @@ echo "Installing sdist"
 pip install dist/sass-*.tar.gz
 
 echo "Running tests"
-nosetests
+#nosetests
+python-coverage run --source=coveralls nosetests
