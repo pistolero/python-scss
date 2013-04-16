@@ -13,4 +13,4 @@ pip install dist/sass-*.tar.gz
 
 echo "Running tests"
 #nosetests
-python-coverage run --source=coveralls nosetests
+python-coverage run --source=coveralls `which nosetests`
