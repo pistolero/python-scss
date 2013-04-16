@@ -1,5 +1,7 @@
 language: python
 
+env:
+  - PIP_USE_MIRRORS=true
 python:
   - "2.7"
   - "3.2"
@@ -10,7 +12,7 @@ before_install:
 
 install:
   - sudo apt-get install cython python-dev
-  - sudo pip install coverage coveralls --use-mirrors
+  - pip install coverage coveralls
 
 script: 
   - ./travis-ci.sh
