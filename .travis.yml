@@ -9,8 +9,8 @@ before_install:
   - git submodule update --init --recursive
 
 install:
-  - sudo apt-get install cython python-nose python-dev python-coverage python-pip
-  - sudo pip install coveralls
+  - sudo apt-get install cython python-dev
+  - sudo pip install nose coverage coveralls --use-mirrors
 
 script: 
   - ./travis-ci.sh
