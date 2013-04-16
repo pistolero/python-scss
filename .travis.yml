@@ -10,7 +10,10 @@ before_install:
 
 install:
   - sudo apt-get install cython python-dev
-  - sudo pip install nose coverage coveralls --use-mirrors
+  - sudo pip install coverage coveralls --use-mirrors
 
 script: 
   - ./travis-ci.sh
+
+after_success: 
+  - coveralls
