@@ -52,3 +52,9 @@ How to contribute
 -----------------
 
 It is easy. Fork repo on GitHub, fix stuff and send me nice looking pull-request.
+
+
+.. image:: https://d2weczhvl823v0.cloudfront.net/pistolero/python-scss/trend.png
+   :alt: Bitdeli badge
+   :target: https://bitdeli.com/free
+
