@@ -33,7 +33,6 @@ libsass_sources = [
     'libsass/context.cpp',
     'libsass/contextualize.cpp',
     'libsass/copy_c_str.cpp',
-    'libsass/emscripten_wrapper.cpp',
     'libsass/error_handling.cpp',
     'libsass/eval.cpp',
     'libsass/expand.cpp',
@@ -49,15 +48,8 @@ libsass_sources = [
     'libsass/sass.cpp',
     'libsass/sass_interface.cpp',
     'libsass/source_map.cpp',
-    'libsass/test_paths.cpp',
-    'libsass/test_selector_difference.cpp',
-    'libsass/test_specificity.cpp',
-    'libsass/test_subset_map.cpp',
-    'libsass/test_superselector.cpp',
-    'libsass/test_unification.cpp',
     'libsass/to_c.cpp',
     'libsass/to_string.cpp',
-    'libsass/trim.cpp',
     'libsass/units.cpp'
 ]
 
