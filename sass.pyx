@@ -24,6 +24,7 @@ cdef extern from "libsass/sass_interface.h":
     cdef struct sass_options:
         int output_style
         char* include_paths
+        char* image_path
 
 
     cdef struct sass_context:
@@ -53,14 +54,16 @@ cdef extern from "libsass/sass_interface.h":
 
 class CompileError(Exception): pass
 
-def compile_string(bytes s, include_paths=None, int output_style=SASS_STYLE_NESTED):
+def compile_string(bytes s, include_paths=None, image_path=None, int output_style=SASS_STYLE_NESTED):
     """Compiles SASS string to CSS"""
 
     include_paths = include_paths or b''
+    image_path = image_path or b''
     cdef sass_context* ctx = sass_new_context()
     try:
         ctx.source_string = s
         ctx.options.include_paths = include_paths
+        ctx.options.image_path = image_path
         ctx.options.output_style = output_style
         sass_compile(ctx)
         if ctx.error_status:

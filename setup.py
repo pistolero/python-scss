@@ -26,18 +26,31 @@ import os.path
 here = os.path.dirname(os.path.abspath(__file__))
 
 libsass_sources = [
-    'libsass/selector.cpp', 
-    'libsass/eval_apply.cpp', 
-    'libsass/node_emitters.cpp', 
-    'libsass/document.cpp', 
-    'libsass/prelexer.cpp', 
-    'libsass/node_factory.cpp', 
-    'libsass/functions.cpp', 
-    'libsass/constants.cpp', 
-    'libsass/node.cpp', 
-    'libsass/context.cpp', 
-    'libsass/document_parser.cpp', 
-    'libsass/sass_interface.cpp'
+    'libsass/ast.cpp',
+    'libsass/base64vlq.cpp',
+    'libsass/bind.cpp',
+    'libsass/constants.cpp',
+    'libsass/context.cpp',
+    'libsass/contextualize.cpp',
+    'libsass/copy_c_str.cpp',
+    'libsass/error_handling.cpp',
+    'libsass/eval.cpp',
+    'libsass/expand.cpp',
+    'libsass/extend.cpp',
+    'libsass/file.cpp',
+    'libsass/functions.cpp',
+    'libsass/inspect.cpp',
+    'libsass/output_compressed.cpp',
+    'libsass/output_nested.cpp',
+    'libsass/parser.cpp',
+    'libsass/prelexer.cpp',
+    'libsass/sassc++.cpp',
+    'libsass/sass.cpp',
+    'libsass/sass_interface.cpp',
+    'libsass/source_map.cpp',
+    'libsass/to_c.cpp',
+    'libsass/to_string.cpp',
+    'libsass/units.cpp'
 ]
 
 ext_modules = [Extension("sass", 
