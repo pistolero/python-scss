@@ -70,7 +70,7 @@ setup(
   name = 'sass',
   cmdclass = cmdclass,
   ext_modules = ext_modules,
-  version = '2.0',
+  version = '2.1.0.1',
   author = 'Sergey Kirilov',
   author_email = 'sergey.kirillov@gmail.com',
   url='https://github.com/pistolero/python-scss', 
