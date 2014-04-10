@@ -71,7 +71,7 @@ setup(
   name = 'sass',
   cmdclass = cmdclass,
   ext_modules = ext_modules,
-  version = '2.2-libsass1.0.1',
+  version = '2.2',
   author = 'Sergey Kirilov',
   author_email = 'sergey.kirillov@gmail.com',
   url='https://github.com/pistolero/python-scss', 
@@ -83,5 +83,5 @@ setup(
   license="Apache License 2.0",   
   keywords="sass scss libsass",  
   description='Python bindings for libsass',
-  long_description=open(os.path.join(here, 'README.rst'), 'rb').read().decode('utf-8')    
+  long_description=open(os.path.join(here, 'README.rst'), 'rb').read().decode('utf-8')
 )

@@ -18,6 +18,7 @@ SASS_STYLE_EXPANDED = 1
 SASS_STYLE_COMPACT = 2
 SASS_STYLE_COMPRESSED = 3
 
+__version__ = '2.2+libsass1.0.1'
 
 cdef extern from "libsass/sass_interface.h":
 
