@@ -2,11 +2,8 @@
 
 set -e
 
-echo "Cythoning saas.pyx"
-cython sass.pyx
-
-echo "Building sdist"
-python setup.py sdist
+echo "Building"
+make 
 
 echo "Installing sdist"
 pip install dist/sass-*.tar.gz

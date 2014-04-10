@@ -3,14 +3,19 @@ LDFLAGS="-Llibsass"
 all: libsass ext
 
 ext: sass.pyx setup.py
-	LDFLAGS=$(LDFLAGS) python setup.py build
+	cython --cplus sass.pyx
+	python setup.py build 
+	python setup.py sdist
 
 test: libsass ext
-	LDFLAGS=$(LDFLAGS) python setup.py nosetests
+	nosetests
 
 clean:
-	rm sass.c || true
+	rm sass.cpp || true
+	rm -r build
 	python setup.py clean
 
-upload: all
-	python setup.py sdist upload
+dist: all test
+
+upload: dist
+	python setup.py upload

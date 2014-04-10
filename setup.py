@@ -44,7 +44,6 @@ libsass_sources = [
     'libsass/output_nested.cpp',
     'libsass/parser.cpp',
     'libsass/prelexer.cpp',
-    'libsass/sassc++.cpp',
     'libsass/sass.cpp',
     'libsass/sass_interface.cpp',
     'libsass/source_map.cpp',
@@ -53,24 +52,26 @@ libsass_sources = [
     'libsass/units.cpp'
 ]
 
+if build_ext:
+    sources = libsass_sources + ["sass.pyx"]
+    cmdclass = {'build_ext': build_ext}
+else:
+    sources = libsass_sources + ["sass.cpp"]
+    cmdclass = {}
+
 ext_modules = [Extension("sass", 
-               libsass_sources + ["sass.pyx"],
+               sources,
                libraries=['stdc++'],
                library_dirs=['./libsass'],
                include_dirs=['.', 'libsass'],
                language='c++'
 )]
 
-cmdclass = {}
-if build_ext:
-    cmdclass = {'build_ext': build_ext}
-
-
 setup(
   name = 'sass',
   cmdclass = cmdclass,
   ext_modules = ext_modules,
-  version = '2.1.0.1',
+  version = '2.2-libsass1.0.1',
   author = 'Sergey Kirilov',
   author_email = 'sergey.kirillov@gmail.com',
   url='https://github.com/pistolero/python-scss', 
@@ -78,6 +79,7 @@ setup(
   extras_require = {
 #    'develop': ['Cython']
   },
+  tests_require = ['nose'],
   license="Apache License 2.0",   
   keywords="sass scss libsass",  
   description='Python bindings for libsass',
