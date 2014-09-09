@@ -33,6 +33,7 @@ libsass_sources = [
     'libsass/context.cpp',
     'libsass/contextualize.cpp',
     'libsass/copy_c_str.cpp',
+    'libsass/emscripten_wrapper.cpp',
     'libsass/error_handling.cpp',
     'libsass/eval.cpp',
     'libsass/expand.cpp',
@@ -46,10 +47,13 @@ libsass_sources = [
     'libsass/prelexer.cpp',
     'libsass/sass.cpp',
     'libsass/sass_interface.cpp',
+    'libsass/sass2scss/sass2scss.cpp',
     'libsass/source_map.cpp',
     'libsass/to_c.cpp',
     'libsass/to_string.cpp',
-    'libsass/units.cpp'
+    'libsass/units.cpp',
+    'libsass/utf8_string.cpp',
+    'libsass/util.cpp'
 ]
 
 if build_ext:
