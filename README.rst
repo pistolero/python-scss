@@ -41,6 +41,10 @@ Steps to compile and install:
    sudo pip install Cython
    git submodule init
    git submodule update
+   cd libsass
+   git submodule init
+   git submodule update
+   cd ..
    make
    sudo python setup.py develop
 

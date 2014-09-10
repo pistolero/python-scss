@@ -33,6 +33,7 @@ libsass_sources = [
     'libsass/context.cpp',
     'libsass/contextualize.cpp',
     'libsass/copy_c_str.cpp',
+    'libsass/emscripten_wrapper.cpp',
     'libsass/error_handling.cpp',
     'libsass/eval.cpp',
     'libsass/expand.cpp',
@@ -46,10 +47,13 @@ libsass_sources = [
     'libsass/prelexer.cpp',
     'libsass/sass.cpp',
     'libsass/sass_interface.cpp',
+    'libsass/sass2scss/sass2scss.cpp',
     'libsass/source_map.cpp',
     'libsass/to_c.cpp',
     'libsass/to_string.cpp',
-    'libsass/units.cpp'
+    'libsass/units.cpp',
+    'libsass/utf8_string.cpp',
+    'libsass/util.cpp'
 ]
 
 if build_ext:
@@ -59,7 +63,7 @@ else:
     sources = libsass_sources + ["sass.cpp"]
     cmdclass = {}
 
-ext_modules = [Extension("sass", 
+ext_modules = [Extension("sass",
                sources,
                libraries=['stdc++'],
                library_dirs=['./libsass'],
@@ -74,14 +78,14 @@ setup(
   version = '2.2',
   author = 'Sergey Kirilov',
   author_email = 'sergey.kirillov@gmail.com',
-  url='https://github.com/pistolero/python-scss', 
+  url='https://github.com/pistolero/python-scss',
   install_requires=[],
   extras_require = {
 #    'develop': ['Cython']
   },
   tests_require = ['nose'],
-  license="Apache License 2.0",   
-  keywords="sass scss libsass",  
+  license="Apache License 2.0",
+  keywords="sass scss libsass",
   description='Python bindings for libsass',
   long_description=open(os.path.join(here, 'README.rst'), 'rb').read().decode('utf-8')
 )
